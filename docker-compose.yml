@@ -1,0 +1,15 @@
+version: '3'
+services:
+  php-dev:
+    working_dir: /app
+    build:
+      context: ./docker
+    env_file:
+      - .env
+    volumes:
+      - "./src:/app"
+    expose:
+      - "8080"
+      - "9000"
+    ports:
+      - "8080:80"
